@@ -25,8 +25,7 @@ with st.sidebar:
 
                  """
                ) 
-with open("Neutral face.json") as source:
-  animation=json.load(source)
+
   
 with st.expander('Analizar texto'):
     text = st.text_input('Escribe por favor: ')
@@ -44,5 +43,7 @@ with st.expander('Analizar texto'):
             st.write( 'Es un sentimiento Negativo 😔')
         else:
             st.write( 'Es un sentimiento Neutral 😐')
+          with open("Neutral face.json") as source:
+  animation=json.load(source)
           
 
