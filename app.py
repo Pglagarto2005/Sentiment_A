@@ -25,7 +25,9 @@ with st.sidebar:
 
                  """
                ) 
-
+with open("Neutral face.json") as source:
+  animation=json.load(source)
+  
 with st.expander('Analizar texto'):
     text = st.text_input('Escribe por favor: ')
     if text:
@@ -37,18 +39,10 @@ with st.expander('Analizar texto'):
         st.write('Subjectivity: ', round(blob.sentiment.subjectivity,2))
         x=round(blob.sentiment.polarity,2)
         if x > 0.0 and x <=1.0:
-            st.write( 'Es un sentimiento Positivo 😊')
-          
-          with open("Happy SUN.json") as source:
-            animation=json.load(source)
-            
+            st.write( 'Es un sentimiento Positivo 😊')            
         elif x >=-1 and x <= 0:
             st.write( 'Es un sentimiento Negativo 😔')
-          
-          with open("Emoji Sad.json") as source:
-            animation=json.load(source)
         else:
             st.write( 'Es un sentimiento Neutral 😐')
           
-          with open("Neutral face.json") as source:
-            animation=json.load(source)
+
