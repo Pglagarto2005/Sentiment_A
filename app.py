@@ -39,12 +39,13 @@ with st.expander('Analizar texto'):
         x=round(blob.sentiment.polarity,2)
         if x > 0.0 and x <=1.0:
             st.write( 'Es un sentimiento Positivo 😊') 
-            with open("Emoji Sad.json") as source:
+            with open("Happy SUN.json") as source:
                 animation=json.load(source)
                 st.lottie(animation,width =350)
+              
         elif x >=-1 and x <= 0:
             st.write( 'Es un sentimiento Negativo 😔')
-            with open("Happy SUN.json") as source:
+            with open("Emoji Sad.json") as source:
                 animation=json.load(source)
                 st.lottie(animation,width =350)
             
